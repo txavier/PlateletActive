@@ -18,9 +18,9 @@ namespace PlateletActive.Infrastructure.Setters
         {
             foreach(var oldFilePath in namesOfFilesToMove)
             {
-                var fileName = oldFilePath.Split("/".ToCharArray()).LastOrDefault();
+                var fileName = oldFilePath.Split("\\".ToCharArray()).LastOrDefault();
 
-                var newFilePath = fileName + "/" + outPath;
+                var newFilePath = outPath + "\\" + fileName;
 
                 System.IO.File.Move(oldFilePath, newFilePath);
             }

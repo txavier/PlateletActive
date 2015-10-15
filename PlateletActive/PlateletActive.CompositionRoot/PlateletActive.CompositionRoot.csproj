@@ -82,6 +82,10 @@
       <Project>{bd976160-9e99-476f-8d93-01e9150ad566}</Project>
       <Name>PlateletActive.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlateletActive.Data\PlateletActive.Data.csproj">
+      <Project>{a46a88ab-ec97-4d61-97eb-7c264805ee17}</Project>
+      <Name>PlateletActive.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlateletActive.Infrastructure\PlateletActive.Infrastructure.csproj">
       <Project>{e2c2167e-692c-4540-89df-a0af23993a9d}</Project>
       <Name>PlateletActive.Infrastructure</Name>

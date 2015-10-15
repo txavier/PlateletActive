@@ -81,7 +81,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Getters\LogFileGetter_GetLogFileData_Should.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

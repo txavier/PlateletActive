@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PlateletActive.Core.Services
 {
-    public class HplcDataService : Service<HplcData>
+    public class HplcDataService : Service<HplcData>, IHplcDataService
     {
         private readonly ILogFileGetter _logFileGetter;
 

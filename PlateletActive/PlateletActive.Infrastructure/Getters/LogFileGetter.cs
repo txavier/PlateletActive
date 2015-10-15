@@ -121,7 +121,7 @@ namespace PlateletActive.Infrastructure.Getters
 
                     hplcDatas.Add(hplcData);
 
-                    filesImported.Concat(new List<string> { filePath });
+                    ((List<string>)filesImported).Add(filePath);
                 }
             }
 

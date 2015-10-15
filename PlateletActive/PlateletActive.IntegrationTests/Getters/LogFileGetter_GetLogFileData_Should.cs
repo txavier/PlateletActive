@@ -29,5 +29,22 @@ namespace PlateletActive.Infrastructure.Getters.Tests
             // Assert.
             Assert.IsTrue(result.Any());
         }
+
+        [TestMethod()]
+        public void RememberFileNames()
+        {
+            // Arrange.
+            var container = new Container(c => c.AddRegistry<PlateletActive.CompositionRoot.DefaultRegistry>());
+
+            var logFileGetter = container.GetInstance<ILogFileGetter>();
+
+            var path = "C:\\dev\\PlateletActive\\PlateletActive\\PlateletActive.Infrastructure\\LogFiles\\In";
+
+            // Act.
+            var result = logFileGetter.GetLogFileData(path);
+
+            // Assert.
+            Assert.IsTrue(logFileGetter.GetNamesOfFilesImported().Any());
+        }
     }
 }

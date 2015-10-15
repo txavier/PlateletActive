@@ -2,6 +2,9 @@
 using AutoClutch.Auto.Repo.Objects;
 using AutoClutch.Auto.Service.Interfaces;
 using AutoClutch.Auto.Service.Services;
+using PlateletActive.Core.Interfaces;
+using PlateletActive.Core.Services;
+using PlateletActive.Infrastructure.Getters;
 using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
 using System;
@@ -25,10 +28,15 @@ namespace PlateletActive.CompositionRoot
                     scan.WithDefaultConventions();
                 });
 
+            For<DbContext>().Use<PlateletActive.Data.PlateletActiveContext>();
 
             For(typeof(IService<>)).Use(typeof(Service<>));
 
             For(typeof(IRepository<>)).Use(typeof(Repository<>));
+
+            For<IHplcDataService>().Use<HplcDataService>();
+
+            For<ILogFileGetter>().Use<LogFileGetter>();
         }
     }
 }
