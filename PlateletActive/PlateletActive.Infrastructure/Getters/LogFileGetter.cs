@@ -11,14 +11,29 @@ namespace PlateletActive.Infrastructure.Getters
     public class LogFileGetter : ILogFileGetter
     {
         public IEnumerable<string> filesImported { get; set; }
+        public bool importing { get; private set; }
 
         public LogFileGetter()
         {
             filesImported = new List<string>();
+
+            importing = false;
+        }
+
+        public IEnumerable<string> GetNamesOfFilesImported()
+        {
+            return filesImported;
+        }
+
+        public bool IsImporting()
+        {
+            return importing;
         }
 
         public IEnumerable<PlateletActive.Core.Models.HplcData> GetLogFileData(string path)
         {
+            importing = true;
+
             var filePaths = System.IO.Directory.GetFiles(path, "*.csv");
 
             var hplcDatas = new List<PlateletActive.Core.Models.HplcData>();
@@ -109,6 +124,8 @@ namespace PlateletActive.Infrastructure.Getters
                     filesImported.Concat(new List<string> { filePath });
                 }
             }
+
+            importing = false;
 
             return hplcDatas;
         }

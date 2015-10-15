@@ -1,4 +1,8 @@
-﻿using StructureMap.Configuration.DSL;
+﻿using AutoClutch.Auto.Repo.Interfaces;
+using AutoClutch.Auto.Repo.Objects;
+using AutoClutch.Auto.Service.Interfaces;
+using AutoClutch.Auto.Service.Services;
+using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,6 +25,10 @@ namespace PlateletActive.CompositionRoot
                     scan.WithDefaultConventions();
                 });
 
+
+            For(typeof(IService<>)).Use(typeof(Service<>));
+
+            For(typeof(IRepository<>)).Use(typeof(Repository<>));
         }
     }
 }

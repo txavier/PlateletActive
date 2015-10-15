@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PlateletActive.Infrastructure</RootNamespace>
     <AssemblyName>PlateletActive.Infrastructure</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Getters\LogFileGetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setters\LogFileMover.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
