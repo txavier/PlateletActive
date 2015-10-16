@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.UnitTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.IntegrationTests", "PlateletActive.IntegrationTests\PlateletActive.IntegrationTests.csproj", "{AAD7ED11-EEB0-4D21-8D3F-0BEEA0B8A174}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.WindowsService", "..\PlateletActive.WindowsService\PlateletActive.WindowsService.csproj", "{E9AF2959-99E5-4DF5-A391-0ED90C6CA301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{AAD7ED11-EEB0-4D21-8D3F-0BEEA0B8A174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD7ED11-EEB0-4D21-8D3F-0BEEA0B8A174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD7ED11-EEB0-4D21-8D3F-0BEEA0B8A174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AF2959-99E5-4DF5-A391-0ED90C6CA301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AF2959-99E5-4DF5-A391-0ED90C6CA301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AF2959-99E5-4DF5-A391-0ED90C6CA301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AF2959-99E5-4DF5-A391-0ED90C6CA301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
