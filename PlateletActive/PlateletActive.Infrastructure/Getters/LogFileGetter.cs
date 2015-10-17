@@ -40,6 +40,8 @@ namespace PlateletActive.Infrastructure.Getters
 
             foreach(var filePath in filePaths)
             {
+                var valid = true;
+
                 using (System.IO.StreamReader reader = System.IO.File.OpenText(filePath))
                 {
                     var csv = new CsvHelper.CsvReader(reader);
@@ -50,9 +52,18 @@ namespace PlateletActive.Infrastructure.Getters
 
                     while (csv.Read())
                     {
-                        var fieldA = csv.GetField<string>(0);
+                        if(!valid)
+                        {
+                            continue;
+                        }
 
-                        var fieldB = csv.GetField<string>(1);
+                        string fieldATemp = null;
+
+                        var fieldA = csv.TryGetField<string>(0, out fieldATemp) ? fieldATemp : null;
+
+                        string fieldBTemp = null;
+
+                        var fieldB = csv.TryGetField<string>(1, out fieldBTemp) ? fieldBTemp : null;
 
                         var fieldBDateTime = new DateTime();
 
@@ -67,61 +78,152 @@ namespace PlateletActive.Infrastructure.Getters
 
                             var sampleNameParts = fieldB.Split('-');
 
+                            if(sampleNameParts.Count() != 4)
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             int batchId = 0;
 
                             hplcData.BatchId = Int32.TryParse(sampleNameParts.ElementAt(1), out batchId) ? batchId : (int?)null;
 
-                            hplcData.FermNumber = sampleNameParts.First();
+                            if(hplcData.BatchId == null)
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
+                            hplcData.SampleNumber = sampleNameParts.First();
 
                             hplcData.SampleAge = sampleNameParts.ElementAt(2);
+
+                            hplcData.User = sampleNameParts.Last();
                         }
 
-                        if(fieldB == "DP4")
+                        if (fieldB == "DP4")
                         {
+                            double hplcDataDp4Temp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataDp4Temp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.Dp4 = csv.GetField<double>(5);
                         }
 
                         if (fieldB == "DP3")
                         {
+                            double hplcDataDp3Temp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataDp3Temp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.Dp3 = csv.GetField<double>(5);
                         }
 
                         if (fieldB == "DP2 MALTOSE")
                         {
+                            double hplcDataDp2MaltoseTemp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataDp2MaltoseTemp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.Dp2Maltose = csv.GetField<double>(5);
                         }
 
                         if (fieldB == "DP1 GLUCOSE")
                         {
+                            double hplcDataDp1GlucoseTemp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataDp1GlucoseTemp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.Dp1Glucose = csv.GetField<double>(5);
                         }
 
                         if (fieldB == "LACTIC ACID")
                         {
+                            double hplcDataLacticAcidTemp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataLacticAcidTemp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.LacticAcid = csv.GetField<double>(5);
                         }
 
                         if (fieldB == "GLYCEROL")
                         {
+                            double hplcDataGlycerolTemp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataGlycerolTemp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.Glycerol = csv.GetField<double>(5);
                         }
 
                         if (fieldB == "ACETIC ACID")
                         {
+                            double hplcDataAceticAcidTemp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataAceticAcidTemp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.AceticAcid = csv.GetField<double>(5);
                         }
 
                         if (fieldB == "ETHANOL")
                         {
+                            double hplcDataEthanolTemp = -1;
+
+                            if (!csv.TryGetField<double>(5, out hplcDataEthanolTemp))
+                            {
+                                valid = false;
+
+                                continue;
+                            }
+
                             hplcData.Ethanol = csv.GetField<double>(5);
                         }
 
                         row++;
                     }
 
-                    hplcDatas.Add(hplcData);
+                    if (valid)
+                    {
+                        hplcDatas.Add(hplcData);
 
-                    ((List<string>)filesImported).Add(filePath);
+                        ((List<string>)filesImported).Add(filePath);
+                    }
                 }
             }
 

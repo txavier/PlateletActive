@@ -13,8 +13,6 @@ namespace PlateletActive.Core.Models
 
         public int? BatchId { get; set; }
 
-        public string FermNumber { get; set; }
-
         public string SampleAge { get; set; }
 
         [Column(TypeName = "datetime2")]
@@ -37,5 +35,9 @@ namespace PlateletActive.Core.Models
         public double? AceticAcid { get; set; }
 
         public double? Ethanol { get; set; }
+
+        public string SampleNumber { get; set; }
+
+        public string User { get; set; }
     }
 }

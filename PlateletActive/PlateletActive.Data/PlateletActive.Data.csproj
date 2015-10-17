@@ -60,6 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201510170108284_ChangeFermNumberAndAddUserToDatabaseModel.cs" />
+    <Compile Include="Migrations\201510170108284_ChangeFermNumberAndAddUserToDatabaseModel.Designer.cs">
+      <DependentUpon>201510170108284_ChangeFermNumberAndAddUserToDatabaseModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510170109432_ChangeFermNumberAndAddUserToDatabaseModel2.cs" />
+    <Compile Include="Migrations\201510170109432_ChangeFermNumberAndAddUserToDatabaseModel2.Designer.cs">
+      <DependentUpon>201510170109432_ChangeFermNumberAndAddUserToDatabaseModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510170133175_RemoveSampleLocationAddSampleNameToModel.cs" />
+    <Compile Include="Migrations\201510170133175_RemoveSampleLocationAddSampleNameToModel.Designer.cs">
+      <DependentUpon>201510170133175_RemoveSampleLocationAddSampleNameToModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlateletActiveContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +85,17 @@
       <Project>{bd976160-9e99-476f-8d93-01e9150ad566}</Project>
       <Name>PlateletActive.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510170108284_ChangeFermNumberAndAddUserToDatabaseModel.resx">
+      <DependentUpon>201510170108284_ChangeFermNumberAndAddUserToDatabaseModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510170109432_ChangeFermNumberAndAddUserToDatabaseModel2.resx">
+      <DependentUpon>201510170109432_ChangeFermNumberAndAddUserToDatabaseModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510170133175_RemoveSampleLocationAddSampleNameToModel.resx">
+      <DependentUpon>201510170133175_RemoveSampleLocationAddSampleNameToModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

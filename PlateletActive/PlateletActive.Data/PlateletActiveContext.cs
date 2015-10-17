@@ -18,15 +18,15 @@ namespace PlateletActive.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<HplcData>()
-                .Property(e => e.FermNumber)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HplcData>()
                 .Property(e => e.SampleAge)
                 .IsUnicode(false);
 
             modelBuilder.Entity<HplcData>()
                 .Property(e => e.SampleName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<HplcData>()
+                .Property(e => e.SampleNumber)
                 .IsUnicode(false);
         }
     }
