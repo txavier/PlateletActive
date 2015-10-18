@@ -80,9 +80,9 @@ namespace PlateletActive.Infrastructure.Getters
 
                             int batchId = 0;
 
-                            if (sampleNameParts.Count() == 4)
+                            if (sampleNameParts.Count() == 4 && Int32.TryParse(sampleNameParts.ElementAt(1), out batchId))
                             {
-                                hplcData.BatchId = Int32.TryParse(sampleNameParts.ElementAt(1), out batchId) ? batchId : (int?)null;
+                                hplcData.BatchId = batchId;
 
                                 if (hplcData.BatchId == null)
                                 {
@@ -94,6 +94,27 @@ namespace PlateletActive.Infrastructure.Getters
                                 hplcData.SampleLocation = sampleNameParts.First();
 
                                 hplcData.SampleAge = sampleNameParts.ElementAt(2);
+
+                                hplcData.User = sampleNameParts.Last();
+                            }
+                            else if (sampleNameParts.Count() == 4)
+                            {
+                                hplcData.SampleLocation = sampleNameParts.First();
+
+                                hplcData.User = sampleNameParts.Last();
+                            }
+                            else if (sampleNameParts.Count() == 3 && Int32.TryParse(sampleNameParts.ElementAt(0), out batchId))
+                            {
+                                hplcData.BatchId = batchId;
+
+                                if (hplcData.BatchId == null)
+                                {
+                                    valid = false;
+
+                                    continue;
+                                }
+
+                                hplcData.SampleLocation = sampleNameParts.ElementAt(1);
 
                                 hplcData.User = sampleNameParts.Last();
                             }
@@ -114,9 +135,7 @@ namespace PlateletActive.Infrastructure.Getters
                             }
                             else if (sampleNameParts.Count() == 3)
                             {
-                                hplcData.SampleLocation = sampleNameParts.First();
-
-                                hplcData.SampleAge = sampleNameParts.ElementAt(1);
+                                hplcData.SampleLocation = sampleNameParts.ElementAt(1);
 
                                 hplcData.User = sampleNameParts.Last();
                             }

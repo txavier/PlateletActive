@@ -69,7 +69,9 @@
     <Compile Include="Services\HplcDataService.cs" />
     <Compile Include="Services\IHplcDataService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Documentation\Screen Shot 2015-10-17 at 9.24.33 PM.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
