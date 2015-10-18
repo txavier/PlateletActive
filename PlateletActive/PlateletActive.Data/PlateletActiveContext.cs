@@ -26,7 +26,7 @@ namespace PlateletActive.Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<HplcData>()
-                .Property(e => e.SampleNumber)
+                .Property(e => e.SampleLocation)
                 .IsUnicode(false);
         }
     }

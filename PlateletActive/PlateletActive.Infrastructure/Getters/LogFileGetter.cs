@@ -78,29 +78,64 @@ namespace PlateletActive.Infrastructure.Getters
 
                             var sampleNameParts = fieldB.Split('-');
 
-                            if(sampleNameParts.Count() != 4)
-                            {
-                                valid = false;
-
-                                continue;
-                            }
-
                             int batchId = 0;
 
-                            hplcData.BatchId = Int32.TryParse(sampleNameParts.ElementAt(1), out batchId) ? batchId : (int?)null;
+                            if (sampleNameParts.Count() == 4)
+                            {
+                                hplcData.BatchId = Int32.TryParse(sampleNameParts.ElementAt(1), out batchId) ? batchId : (int?)null;
 
-                            if(hplcData.BatchId == null)
+                                if (hplcData.BatchId == null)
+                                {
+                                    valid = false;
+
+                                    continue;
+                                }
+
+                                hplcData.SampleLocation = sampleNameParts.First();
+
+                                hplcData.SampleAge = sampleNameParts.ElementAt(2);
+
+                                hplcData.User = sampleNameParts.Last();
+                            }
+                            else if (sampleNameParts.Count() == 3 && Int32.TryParse(sampleNameParts.ElementAt(1), out batchId))
+                            {
+                                hplcData.BatchId = batchId;
+
+                                if (hplcData.BatchId == null)
+                                {
+                                    valid = false;
+
+                                    continue;
+                                }
+
+                                hplcData.SampleLocation = sampleNameParts.First();
+
+                                hplcData.User = sampleNameParts.Last();
+                            }
+                            else if (sampleNameParts.Count() == 3)
+                            {
+                                hplcData.SampleLocation = sampleNameParts.First();
+
+                                hplcData.SampleAge = sampleNameParts.ElementAt(1);
+
+                                hplcData.User = sampleNameParts.Last();
+                            }
+                            else if (sampleNameParts.Count() == 2)
+                            {
+                                hplcData.SampleLocation = sampleNameParts.First();
+
+                                hplcData.User = sampleNameParts.Last();
+                            }
+                            else if (sampleNameParts.Count() == 1)
+                            {
+                                hplcData.User = sampleNameParts.First();
+                            }
+                            else
                             {
                                 valid = false;
 
                                 continue;
                             }
-
-                            hplcData.SampleNumber = sampleNameParts.First();
-
-                            hplcData.SampleAge = sampleNameParts.ElementAt(2);
-
-                            hplcData.User = sampleNameParts.Last();
                         }
 
                         if (fieldB == "DP4")

@@ -26,7 +26,7 @@ namespace PlateletActive.Core.Services.Tests
 
             var hplcDataService = autoMocker.ClassUnderTest;
 
-            var hplcData = new HplcData { SampleNumber = "" };
+            var hplcData = new HplcData { SampleLocation = "" };
 
             var hplcDatas = new List<HplcData>() { hplcData };
 

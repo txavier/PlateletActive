@@ -36,7 +36,7 @@ namespace PlateletActive.Core.Models
 
         public double? Ethanol { get; set; }
 
-        public string SampleNumber { get; set; }
+        public string SampleLocation { get; set; }
 
         public string User { get; set; }
     }
