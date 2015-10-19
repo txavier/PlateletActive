@@ -21,7 +21,7 @@ namespace PlateletActive.Infrastructure.Getters.Tests
 
             var logFileGetter = container.GetInstance<ILogFileGetter>();
 
-            var path = "C:\\dev\\PlateletActive\\PlateletActive\\PlateletActive.Infrastructure\\LogFiles\\In";
+            var path = "C:\\dev\\PlateletActive\\PlateletActive.Infrastructure\\LogFiles\\In";
 
             // Act.
             var result = logFileGetter.GetLogFileData(path);
@@ -38,7 +38,7 @@ namespace PlateletActive.Infrastructure.Getters.Tests
 
             var logFileGetter = container.GetInstance<ILogFileGetter>();
 
-            var path = "C:\\dev\\PlateletActive\\PlateletActive\\PlateletActive.Infrastructure\\LogFiles\\In";
+            var path = "C:\\dev\\PlateletActive\\PlateletActive.Infrastructure\\LogFiles\\In";
 
             // Act.
             var result = logFileGetter.GetLogFileData(path);

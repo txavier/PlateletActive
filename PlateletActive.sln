@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive", "PlateletActive.csproj", "{77AC64CF-1049-4D53-BFFE-DB36505D831F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive", "PlateletActive\PlateletActive.csproj", "{77AC64CF-1049-4D53-BFFE-DB36505D831F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.Core", "..\PlateletActive.Core\PlateletActive.Core.csproj", "{BD976160-9E99-476F-8D93-01E9150AD566}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.Core", "PlateletActive.Core\PlateletActive.Core.csproj", "{BD976160-9E99-476F-8D93-01E9150AD566}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.CompositionRoot", "PlateletActive.CompositionRoot\PlateletActive.CompositionRoot.csproj", "{3CD8859A-C2C1-491E-8546-F005845C7782}"
 EndProject
@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.UnitTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.IntegrationTests", "PlateletActive.IntegrationTests\PlateletActive.IntegrationTests.csproj", "{AAD7ED11-EEB0-4D21-8D3F-0BEEA0B8A174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.WindowsService", "..\PlateletActive.WindowsService\PlateletActive.WindowsService.csproj", "{E9AF2959-99E5-4DF5-A391-0ED90C6CA301}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlateletActive.WindowsService", "PlateletActive.WindowsService\PlateletActive.WindowsService.csproj", "{E9AF2959-99E5-4DF5-A391-0ED90C6CA301}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

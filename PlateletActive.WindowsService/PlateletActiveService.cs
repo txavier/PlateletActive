@@ -71,7 +71,7 @@ namespace PlateletActive.WindowsService
 
                 var outPath = ConfigurationManager.AppSettings["outPath"];
 
-                int clientId = -1;
+                int clientId = 0;
 
                 if (!Int32.TryParse(ConfigurationManager.AppSettings["clientId"], out clientId))
                 {
@@ -80,7 +80,7 @@ namespace PlateletActive.WindowsService
 
                 eventLog1.WriteEntry("PlateletActive import has begun.");
 
-                _hplcDataService.ImportHplcData(inPath, outPath, clientId == -1 ? null : (int?)clientId);
+                _hplcDataService.ImportHplcData(inPath, outPath, clientId == 0 ? null : (int?)clientId);
 
                 eventLog1.WriteEntry("PlateletActive import has ended.");
 

@@ -107,7 +107,7 @@
       <Project>{bd976160-9e99-476f-8d93-01e9150ad566}</Project>
       <Name>PlateletActive.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PlateletActive\PlateletActive.CompositionRoot\PlateletActive.CompositionRoot.csproj">
+    <ProjectReference Include="..\PlateletActive.CompositionRoot\PlateletActive.CompositionRoot.csproj">
       <Project>{3cd8859a-c2c1-491e-8546-f005845c7782}</Project>
       <Name>PlateletActive.CompositionRoot</Name>
     </ProjectReference>

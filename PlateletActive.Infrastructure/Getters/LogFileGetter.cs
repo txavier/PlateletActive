@@ -38,7 +38,9 @@ namespace PlateletActive.Infrastructure.Getters
 
             var hplcDatas = new List<PlateletActive.Core.Models.HplcData>();
 
-            foreach(var filePath in filePaths)
+            int concentrationColumn = -1;
+
+            foreach (var filePath in filePaths)
             {
                 var valid = true;
 
@@ -52,7 +54,7 @@ namespace PlateletActive.Infrastructure.Getters
 
                     while (csv.Read())
                     {
-                        if(!valid)
+                        if (!valid)
                         {
                             continue;
                         }
@@ -67,12 +69,12 @@ namespace PlateletActive.Infrastructure.Getters
 
                         var fieldBDateTime = new DateTime();
 
-                        if(fieldA == "Generated" && DateTime.TryParse(fieldB, out fieldBDateTime))
+                        if (fieldA == "Generated" && DateTime.TryParse(fieldB, out fieldBDateTime))
                         {
                             hplcData.Timestamp = fieldBDateTime;
                         }
 
-                        if(fieldA == "Sample Name")
+                        if (fieldA == "Sample Name")
                         {
                             hplcData.SampleName = fieldB;
 
@@ -149,37 +151,32 @@ namespace PlateletActive.Infrastructure.Getters
                             {
                                 hplcData.User = sampleNameParts.First();
                             }
-                            else
+                        }
+
+                        // Find concentration column.
+                        if (fieldA.Trim() == "ID#")
+                        {
+                            string concentrationColumnCheck = string.Empty;
+
+                            for (int i = 0; i < 10; i++)
+                            {
+                                // If this is the concenctration column then break out of the loop and use this column to get
+                                // the concentrations.
+                                if (csv.TryGetField<string>(i, out concentrationColumnCheck) && concentrationColumnCheck.Trim() == "Conc.")
+                                {
+                                    concentrationColumn = i;
+
+                                    break;
+                                }
+                            }
+
+                            // If the concentration column was not found then mark this file as invalid.
+                            if (concentrationColumn == -1)
                             {
                                 valid = false;
 
                                 continue;
                             }
-                        }
-
-                        int concentrationColumn = -1;
-
-                        string concentrationColumnCheck = string.Empty;
-
-                        // Find concentration column.
-                        for(int i = 0; i < 10; i++)
-                        {
-                            // If this is the concenctration column then break out of the loop and use this column to get
-                            // the concentrations.
-                            if (csv.TryGetField<string>(i, out concentrationColumnCheck) && concentrationColumnCheck.Trim() == "Conc.")
-                            {
-                                concentrationColumn = i;
-
-                                break;
-                            }
-                        }
-
-                        // If the concentration column was not found then mark this file as invalid.
-                        if(concentrationColumn == -1)
-                        {
-                            valid = false;
-
-                            continue;
                         }
 
                         // Get concentrations.

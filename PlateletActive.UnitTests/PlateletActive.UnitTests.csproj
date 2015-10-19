@@ -97,7 +97,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PlateletActive.Core\PlateletActive.Core.csproj">
+    <ProjectReference Include="..\PlateletActive.Core\PlateletActive.Core.csproj">
       <Project>{BD976160-9E99-476F-8D93-01E9150AD566}</Project>
       <Name>PlateletActive.Core</Name>
     </ProjectReference>
