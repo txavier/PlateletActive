@@ -157,116 +157,142 @@ namespace PlateletActive.Infrastructure.Getters
                             }
                         }
 
+                        int concentrationColumn = -1;
+
+                        string concentrationColumnCheck = string.Empty;
+
+                        // Find concentration column.
+                        for(int i = 0; i < 10; i++)
+                        {
+                            // If this is the concenctration column then break out of the loop and use this column to get
+                            // the concentrations.
+                            if (csv.TryGetField<string>(i, out concentrationColumnCheck) && concentrationColumnCheck.Trim() == "Conc.")
+                            {
+                                concentrationColumn = i;
+
+                                break;
+                            }
+                        }
+
+                        // If the concentration column was not found then mark this file as invalid.
+                        if(concentrationColumn == -1)
+                        {
+                            valid = false;
+
+                            continue;
+                        }
+
+                        // Get concentrations.
                         if (fieldB == "DP4")
                         {
                             double hplcDataDp4Temp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataDp4Temp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataDp4Temp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.Dp4 = csv.GetField<double>(5);
+                            hplcData.Dp4 = hplcDataDp4Temp;
                         }
 
                         if (fieldB == "DP3")
                         {
                             double hplcDataDp3Temp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataDp3Temp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataDp3Temp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.Dp3 = csv.GetField<double>(5);
+                            hplcData.Dp3 = hplcDataDp3Temp;
                         }
 
                         if (fieldB == "DP2 MALTOSE")
                         {
                             double hplcDataDp2MaltoseTemp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataDp2MaltoseTemp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataDp2MaltoseTemp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.Dp2Maltose = csv.GetField<double>(5);
+                            hplcData.Dp2Maltose = hplcDataDp2MaltoseTemp;
                         }
 
                         if (fieldB == "DP1 GLUCOSE")
                         {
                             double hplcDataDp1GlucoseTemp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataDp1GlucoseTemp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataDp1GlucoseTemp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.Dp1Glucose = csv.GetField<double>(5);
+                            hplcData.Dp1Glucose = hplcDataDp1GlucoseTemp;
                         }
 
                         if (fieldB == "LACTIC ACID")
                         {
                             double hplcDataLacticAcidTemp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataLacticAcidTemp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataLacticAcidTemp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.LacticAcid = csv.GetField<double>(5);
+                            hplcData.LacticAcid = hplcDataLacticAcidTemp;
                         }
 
                         if (fieldB == "GLYCEROL")
                         {
                             double hplcDataGlycerolTemp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataGlycerolTemp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataGlycerolTemp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.Glycerol = csv.GetField<double>(5);
+                            hplcData.Glycerol = hplcDataGlycerolTemp;
                         }
 
                         if (fieldB == "ACETIC ACID")
                         {
                             double hplcDataAceticAcidTemp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataAceticAcidTemp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataAceticAcidTemp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.AceticAcid = csv.GetField<double>(5);
+                            hplcData.AceticAcid = hplcDataAceticAcidTemp;
                         }
 
                         if (fieldB == "ETHANOL")
                         {
                             double hplcDataEthanolTemp = -1;
 
-                            if (!csv.TryGetField<double>(5, out hplcDataEthanolTemp))
+                            if (!csv.TryGetField<double>(concentrationColumn, out hplcDataEthanolTemp))
                             {
                                 valid = false;
 
                                 continue;
                             }
 
-                            hplcData.Ethanol = csv.GetField<double>(5);
+                            hplcData.Ethanol = hplcDataEthanolTemp;
                         }
 
                         row++;

@@ -76,6 +76,14 @@
     <Compile Include="Migrations\201510180130072_ChangeSampleNumberToSampleLocation.Designer.cs">
       <DependentUpon>201510180130072_ChangeSampleNumberToSampleLocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510190211214_AddClientsTable.cs" />
+    <Compile Include="Migrations\201510190211214_AddClientsTable.Designer.cs">
+      <DependentUpon>201510190211214_AddClientsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510190213592_UpperCamelCaseClientsTable.cs" />
+    <Compile Include="Migrations\201510190213592_UpperCamelCaseClientsTable.Designer.cs">
+      <DependentUpon>201510190213592_UpperCamelCaseClientsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlateletActiveContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510180130072_ChangeSampleNumberToSampleLocation.resx">
       <DependentUpon>201510180130072_ChangeSampleNumberToSampleLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510190211214_AddClientsTable.resx">
+      <DependentUpon>201510190211214_AddClientsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510190213592_UpperCamelCaseClientsTable.resx">
+      <DependentUpon>201510190213592_UpperCamelCaseClientsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

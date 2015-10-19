@@ -33,7 +33,7 @@ namespace PlateletActive.Core.Services
             return importing;
         }
 
-        public void ImportHplcData(string inPath, string outPath = null)
+        public void ImportHplcData(string inPath, string outPath = null, int? clientId = null)
         {
             // If the getter is not already getting files then go ahead with the import.
             if(!_logFileGetter.IsImporting())
@@ -41,6 +41,16 @@ namespace PlateletActive.Core.Services
                 importing = true;
 
                 var hplcDatas = _logFileGetter.GetLogFileData(inPath);
+
+                // Enter clientId in all of these imported hplcData rows if there is a client id.
+                if (clientId != null)
+                {
+                    hplcDatas = hplcDatas.Select(i =>
+                    {
+                        i.clientId = clientId;
+                        return i;
+                    }).ToList();
+                }
 
                 // Save data to database.
                 AddRange(hplcDatas);

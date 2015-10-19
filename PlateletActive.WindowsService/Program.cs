@@ -39,47 +39,10 @@ namespace PlateletActive.WindowsService
                             throw new NotImplementedException();
                     }
                 }
-
-                //if (Environment.UserInteractive)
-                //{
-                //    string parameter = string.Concat(args);
-                //    switch (parameter)
-                //    {
-                //        case "--install":
-                //            //System.Configuration.Install.ManagedInstallerClass.InstallHelper(new[] { System.Reflection.Assembly.GetExecutingAssembly().Location });
-                //            InstallService();
-                //            StartService();
-                //            break;
-                //        case "--uninstall":
-                //            //System.Configuration.Install.ManagedInstallerClass.InstallHelper(new[] { "/u", System.Reflection.Assembly.GetExecutingAssembly().Location });
-                //            StopService();
-                //            UninstallService();
-                //            break;
-                //    }
-                //}
-                //else
-                //{
-
-                //    ServiceBase[] ServicesToRun;
-
-                //    ServicesToRun = new ServiceBase[]
-                //        {
-                //        new PlateletActiveService()
-                //        };
-
-                //    ServiceBase.Run(ServicesToRun);
-                //}
-
-                ////ServiceBase[] ServicesToRun;
-                ////ServicesToRun = new ServiceBase[]
-                ////{
-                ////    new PlateletActiveService()
-                ////};
-                ////ServiceBase.Run(ServicesToRun);
             }
             catch(Exception ex)
             {
-                throw ex;
+                Console.WriteLine("Unable to continue, the following error occurred. " + ex.Message);
             }
         }
 

@@ -11,6 +11,8 @@ namespace PlateletActive.Core.Models
     {
         public int HplcDataId { get; set; }
 
+        public int? clientId { get; set; }
+
         public int? BatchId { get; set; }
 
         public string SampleAge { get; set; }
@@ -36,8 +38,10 @@ namespace PlateletActive.Core.Models
 
         public double? Ethanol { get; set; }
 
+        public string User { get; set; }
+
         public string SampleLocation { get; set; }
 
-        public string User { get; set; }
+        public virtual Client client { get; set; }
     }
 }
