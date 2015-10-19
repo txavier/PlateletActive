@@ -22,7 +22,7 @@ namespace PlateletActive.Infrastructure.Setters
 
                 var newFilePath = outPath + "\\" + fileName;
 
-                if (System.IO.File.Exists(oldFilePath))
+                if (System.IO.File.Exists(oldFilePath) && !System.IO.File.Exists(newFilePath))
                 {
                     System.IO.File.Move(oldFilePath, newFilePath);
                 }
