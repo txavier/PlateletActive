@@ -68,7 +68,7 @@
     <Compile Include="Models\HplcData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HplcDataService.cs" />
-    <Compile Include="Services\IHplcDataService.cs" />
+    <Compile Include="Interfaces\IHplcDataService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation\Screen Shot 2015-10-17 at 9.24.33 PM.png" />

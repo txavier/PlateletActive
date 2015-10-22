@@ -84,6 +84,22 @@
     <Compile Include="Migrations\201510190213592_UpperCamelCaseClientsTable.Designer.cs">
       <DependentUpon>201510190213592_UpperCamelCaseClientsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510200055077_AddNameFieldToClientModel.cs" />
+    <Compile Include="Migrations\201510200055077_AddNameFieldToClientModel.Designer.cs">
+      <DependentUpon>201510200055077_AddNameFieldToClientModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510200056481_ChangeNameFieldToDisplayNameField.cs" />
+    <Compile Include="Migrations\201510200056481_ChangeNameFieldToDisplayNameField.Designer.cs">
+      <DependentUpon>201510200056481_ChangeNameFieldToDisplayNameField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220245375_UndoTestMessageTable.cs" />
+    <Compile Include="Migrations\201510220245375_UndoTestMessageTable.Designer.cs">
+      <DependentUpon>201510220245375_UndoTestMessageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220251362_UndoTestMessageTable2.cs" />
+    <Compile Include="Migrations\201510220251362_UndoTestMessageTable2.Designer.cs">
+      <DependentUpon>201510220251362_UndoTestMessageTable2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlateletActiveContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +132,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510190213592_UpperCamelCaseClientsTable.resx">
       <DependentUpon>201510190213592_UpperCamelCaseClientsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510200055077_AddNameFieldToClientModel.resx">
+      <DependentUpon>201510200055077_AddNameFieldToClientModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510200056481_ChangeNameFieldToDisplayNameField.resx">
+      <DependentUpon>201510200056481_ChangeNameFieldToDisplayNameField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220245375_UndoTestMessageTable.resx">
+      <DependentUpon>201510220245375_UndoTestMessageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220251362_UndoTestMessageTable2.resx">
+      <DependentUpon>201510220251362_UndoTestMessageTable2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -42,6 +42,6 @@ namespace PlateletActive.Core.Models
 
         public string SampleLocation { get; set; }
 
-        public virtual Client client { get; set; }
+        public virtual Client Client { get; set; }
     }
 }

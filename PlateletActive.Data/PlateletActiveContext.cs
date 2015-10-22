@@ -13,7 +13,7 @@ namespace PlateletActive.Data
         {
         }
 
-        public virtual DbSet<Client> clients { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<HplcData> HplcDatas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
