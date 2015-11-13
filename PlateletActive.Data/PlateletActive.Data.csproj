@@ -100,6 +100,10 @@
     <Compile Include="Migrations\201510220251362_UndoTestMessageTable2.Designer.cs">
       <DependentUpon>201510220251362_UndoTestMessageTable2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510260057095_AddMessageToHplcData.cs" />
+    <Compile Include="Migrations\201510260057095_AddMessageToHplcData.Designer.cs">
+      <DependentUpon>201510260057095_AddMessageToHplcData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlateletActiveContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510220251362_UndoTestMessageTable2.resx">
       <DependentUpon>201510220251362_UndoTestMessageTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510260057095_AddMessageToHplcData.resx">
+      <DependentUpon>201510260057095_AddMessageToHplcData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

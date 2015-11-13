@@ -62,7 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Getters\BionLogFileGetter.cs" />
     <Compile Include="Getters\LogFileGetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setters\LogFileMover.cs" />
@@ -82,8 +81,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="LogFiles\In\" />
     <Folder Include="LogFiles\Out\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LogFiles\In\locations.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
