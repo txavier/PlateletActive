@@ -31,7 +31,13 @@ namespace PlateletActive.Core.Services.Tests
             var hplcDatas = new List<HplcData>() { hplcData };
 
             var mockHplcDataRepository = Mock.Get(autoMocker.Get<IRepository<HplcData>>())
-                .Setup(i => i.Add(It.IsAny<HplcData>(), It.IsAny<bool>()))
+                .Setup(i => i.Add(
+                    It.IsAny<HplcData>(), 
+                    It.IsAny<string>(), 
+                    It.IsAny<bool>(), 
+                    It.IsAny<bool>(), 
+                    It.IsAny<bool>(),
+                    It.IsAny<bool>()))
                 .Returns(hplcData);
 
             var mockLogFileGetter = Mock.Get(autoMocker.Get<ILogFileGetter>())
@@ -45,5 +51,6 @@ namespace PlateletActive.Core.Services.Tests
             // Assert.
             Assert.IsTrue(true);
         }
+
     }
 }

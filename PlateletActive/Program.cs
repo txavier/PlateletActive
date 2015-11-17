@@ -13,6 +13,7 @@ namespace PlateletActive
     {
         static void Main(string[] args)
         {
+
             var container = new Container(c => c.AddRegistry<PlateletActive.CompositionRoot.DefaultRegistry>());
 
             if (args.Contains("--Start"))
@@ -28,6 +29,27 @@ namespace PlateletActive
                 var outPath = ConfigurationManager.AppSettings["outPath"];
 
                 hplcDataService.ImportHplcData(inPath, outPath);
+
+                System.Console.WriteLine("Time now: " + DateTime.Now.ToString());
+            }
+            else if (args.Contains("--StartRepeat"))
+            {
+                var hplcDataService = container.GetInstance<IHplcDataService>();
+
+                System.Console.WriteLine("Time now: " + DateTime.Now.ToString());
+
+                System.Console.WriteLine();
+
+                var inPath = ConfigurationManager.AppSettings["inPath"];
+
+                var outPath = ConfigurationManager.AppSettings["inPath"];
+
+                for (int i = 0; i < 2000; i++)
+                {
+                    hplcDataService.ImportHplcData(inPath, outPath);
+
+                    container.Dispose();
+                }
 
                 System.Console.WriteLine("Time now: " + DateTime.Now.ToString());
             }

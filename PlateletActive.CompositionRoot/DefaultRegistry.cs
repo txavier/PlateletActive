@@ -36,7 +36,7 @@ namespace PlateletActive.CompositionRoot
 
             For<IHplcDataService>().Use<HplcDataService>();
 
-            For<ILogFileGetter>().Use<BionLogFileGetter>();
+            For<ILogFileGetter>().Use<LogFileGetter>();
         }
     }
 }
