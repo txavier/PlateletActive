@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataComparison>
+  <Version>10</Version>
+  <ConnectionProperties1>
+    <ConnectionString>Data Source=.;Initial Catalog=CsvParser_new;Integrated Security=True;Persist Security Info=False;Pooling=False</ConnectionString>
+    <FullDisplayName>..CsvParser_new (THEOX-PC\theox)</FullDisplayName>
+  </ConnectionProperties1>
+  <ConnectionProperties2>
+    <ConnectionString>Data Source=.;Initial Catalog=CsvParser;Integrated Security=True;Persist Security Info=False;Pooling=False</ConnectionString>
+    <FullDisplayName>..CsvParser (THEOX-PC\theox)</FullDisplayName>
+  </ConnectionProperties2>
+  <SessionSettings>Default</SessionSettings>
+</DataComparison>

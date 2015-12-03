@@ -6,16 +6,16 @@ namespace PlateletActive.Core.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Client")]
-    public partial class Client
+    public partial class tSite
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Client()
+        public tSite()
         {
             HplcDatas = new HashSet<HplcData>();
         }
 
-        public int clientId { get; set; }
+        [Key]
+        public int SiteID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HplcData> HplcDatas { get; set; }

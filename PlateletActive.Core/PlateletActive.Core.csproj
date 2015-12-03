@@ -80,8 +80,8 @@
   <ItemGroup>
     <Compile Include="Interfaces\ILogFileGetter.cs" />
     <Compile Include="Interfaces\ILogFileMover.cs" />
-    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\HplcData.cs" />
+    <Compile Include="Models\tSite.cs" />
     <Compile Include="Objects\Error.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HplcDataService.cs" />
@@ -94,6 +94,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Documentation\InstallInstructionsforPlateletActive.pdf" />
+    <None Include="Documentation\SqlDataCompare.dcmp" />
+    <None Include="Documentation\SqlSchemaCompare.scmp" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

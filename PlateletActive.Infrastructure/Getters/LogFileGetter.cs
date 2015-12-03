@@ -86,9 +86,9 @@ namespace PlateletActive.Infrastructure.Getters
 
                                 if (sampleNameParts.Count() == 4 && Int32.TryParse(sampleNameParts.ElementAt(1), out batchId))
                                 {
-                                    hplcData.BatchId = batchId;
+                                    hplcData.BatchID = batchId;
 
-                                    if (hplcData.BatchId == null)
+                                    if (hplcData.BatchID == null)
                                     {
                                         valid = false;
 
@@ -109,9 +109,9 @@ namespace PlateletActive.Infrastructure.Getters
                                 }
                                 else if (sampleNameParts.Count() == 3 && Int32.TryParse(sampleNameParts.ElementAt(0), out batchId))
                                 {
-                                    hplcData.BatchId = batchId;
+                                    hplcData.BatchID = batchId;
 
-                                    if (hplcData.BatchId == null)
+                                    if (hplcData.BatchID == null)
                                     {
                                         valid = false;
 
@@ -124,9 +124,9 @@ namespace PlateletActive.Infrastructure.Getters
                                 }
                                 else if (sampleNameParts.Count() == 3 && Int32.TryParse(sampleNameParts.ElementAt(1), out batchId))
                                 {
-                                    hplcData.BatchId = batchId;
+                                    hplcData.BatchID = batchId;
 
-                                    if (hplcData.BatchId == null)
+                                    if (hplcData.BatchID == null)
                                     {
                                         valid = false;
 
@@ -193,7 +193,7 @@ namespace PlateletActive.Infrastructure.Getters
                                     continue;
                                 }
 
-                                hplcData.Dp4 = hplcDataDp4Temp;
+                                hplcData.DP4 = hplcDataDp4Temp;
                             }
 
                             if (fieldB == "DP3")
@@ -207,7 +207,7 @@ namespace PlateletActive.Infrastructure.Getters
                                     continue;
                                 }
 
-                                hplcData.Dp3 = hplcDataDp3Temp;
+                                hplcData.DP3 = hplcDataDp3Temp;
                             }
 
                             if (fieldB == "DP2 MALTOSE")
@@ -221,7 +221,7 @@ namespace PlateletActive.Infrastructure.Getters
                                     continue;
                                 }
 
-                                hplcData.Dp2Maltose = hplcDataDp2MaltoseTemp;
+                                hplcData.DP2Maltose = hplcDataDp2MaltoseTemp;
                             }
 
                             if (fieldB == "DP1 GLUCOSE")
@@ -235,7 +235,7 @@ namespace PlateletActive.Infrastructure.Getters
                                     continue;
                                 }
 
-                                hplcData.Dp1Glucose = hplcDataDp1GlucoseTemp;
+                                hplcData.DP1Glucose = hplcDataDp1GlucoseTemp;
                             }
 
                             if (fieldB == "LACTIC ACID")

@@ -9,11 +9,12 @@ namespace PlateletActive.Core.Models
     [Table("HplcData")]
     public partial class HplcData
     {
-        public int HplcDataId { get; set; }
+        [Key]
+        public int HplcDatale { get; set; }
 
-        public int? clientId { get; set; }
+        public int? SiteID { get; set; }
 
-        public int? BatchId { get; set; }
+        public int? BatchID { get; set; }
 
         public string SampleAge { get; set; }
 
@@ -22,13 +23,13 @@ namespace PlateletActive.Core.Models
 
         public string SampleName { get; set; }
 
-        public double? Dp4 { get; set; }
+        public double? DP4 { get; set; }
 
-        public double? Dp3 { get; set; }
+        public double? DP3 { get; set; }
 
-        public double? Dp2Maltose { get; set; }
+        public double? DP2Maltose { get; set; }
 
-        public double? Dp1Glucose { get; set; }
+        public double? DP1Glucose { get; set; }
 
         public double? LacticAcid { get; set; }
 
@@ -42,6 +43,6 @@ namespace PlateletActive.Core.Models
 
         public string SampleLocation { get; set; }
 
-        public virtual Client Client { get; set; }
+        public virtual tSite tSite { get; set; }
     }
 }

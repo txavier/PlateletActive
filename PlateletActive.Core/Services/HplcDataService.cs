@@ -125,7 +125,7 @@ namespace PlateletActive.Core.Services
                 {
                     hplcDatas = hplcDatas.Select(i =>
                     {
-                        i.clientId = clientId;
+                        i.SiteID = clientId;
                         return i;
                     }).ToList();
                 }
